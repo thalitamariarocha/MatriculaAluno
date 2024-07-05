@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+
+<body>
+
+    <h2>Editais</h2>
+    <div>
+        <button routerLink="/edital" type="button" class="btn btn-success" id="novo">Novo Edital</button>
+    </div>
+
+
+    <div class="grid-table">
+        <div class="grid-header">
+            <div class="grid-cell">#</div>
+            <div class="grid-cell">Número</div>
+            <div class="grid-cell">Ano</div>
+            <div class="grid-cell">Descrição</div>
+            <div class="grid-cell">Ações</div>
+        </div>
+        <div class="grid-row" *ngFor="let edital of editais ">
+            <div class="grid-cell">{{ edital.id_edital }}</div>
+            <div class="grid-cell">{{ edital.numero }}</div>
+            <div class="grid-cell">{{ edital.ano }}</div>
+            <div class="grid-cell">{{ edital.descricao }}</div>
+            <div class="grid-cell grid-actions">
+                <button class="btt" (click)="getEditalById(edital.id_edital)"><span class="material-symbols-outlined">
+                        edit </span></button>
+                <button class="btt" (click)="deletarEdital(edital.id_edital)"><span class="material-symbols-outlined">
+                        delete </span></button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- <table>
+    <thead>
+        <tr>
+            <th class="cabecalho">#</th>
+            <th class="cabecalho">Número</th>
+            <th class="cabecalho">Ano</th>
+            <th class="cabecalho">Descrição</th>
+            <th class="cabecalho">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let edital of editais">
+            <td class="textoid" >{{ edital.id_edital }}</td>
+            <td class="textonum">{{ edital.numero }}</td>
+            <td class="textoano">{{ edital.ano }}</td>
+            <td class="texto">{{ edital.descricao }}</td>
+            <td class="texto">
+                <button class="btt" (click)="editarEdital(edital)"><span class="material-symbols-outlined"> edit </span></button>
+                <button class="btt" (click)="deletarEdital(edital.id_edital)"><span class="material-symbols-outlined"> delete </span></button>
+
+
+             
+            </td>
+        </tr>
+    </tbody>
+</table>
+ -->
+</body>

@@ -1,0 +1,20 @@
+<h2>MATRÍCULA</h2>
+<form>
+    <div class="tela">
+
+        <!-- <span class="alert alert-light" role="alert">
+            {{ message }}
+        </span> -->
+
+        <p>{{ message }}</p>
+        <h6>Insira o CPF para iniciar a matrícula</h6>
+        <label for="CPF"></label>
+        <!-- <input type="text" id="CPF" name="CPF" required placeholder="somente números"  [(ngModel)]="cpf"> -->
+
+    </div>
+    <div class="btnx">
+        <button type="submit" class="btn btn-secondary btn-lg " (click)="validarCpf()">Iniciar Matrícula</button>
+    </div>
+
+
+</form>

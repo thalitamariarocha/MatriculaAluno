@@ -1,0 +1,29 @@
+
+    <h2>{{ editMode ? 'Editar Edital' : 'Cadastrar Edital' }}</h2>
+    <form (ngSubmit)="onSubmit()" >
+      <div class="form-group">
+      <label for="numero">Número:</label>
+      <input id="numero" [(ngModel)]="numero" name="numero" required />
+      </div>
+      
+      <div class="form-group">
+      <label for="ano">Ano:</label>
+      <input id="ano" type="number" [(ngModel)]="ano" name="ano" required />
+      </div>
+
+      <div class="form-group">
+        <label for="qtdVagas">Quantidade de Vagas:</label>
+        <input id="qtdVagas" type="number" [(ngModel)]="qtdVagas" name="qtdVagas" required />
+        </div>
+      
+      <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" [(ngModel)]="descricao" name="descricao" required></textarea>
+      </div>
+      
+      <button type="submit" id="cadastrar">Salvar</button>
+    </form>
+    <div></div>
+    <div id="message">{{ message }}</div>
+  
+  
