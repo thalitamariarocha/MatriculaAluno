@@ -41,7 +41,7 @@ export class ListarEditalComponent implements OnInit {
   }
 
   editarEdital(edital: any): void {
-    this.router.navigate(['/edital', edital.id_edital]);
+    this.router.navigate(['/home/edital', edital.id_edital]);
   }
 
   deletarEdital(id_edital: number): void {
@@ -50,13 +50,8 @@ export class ListarEditalComponent implements OnInit {
     });
   }
 
-  // carregarEdital(id_edital: number): void {
-  //   this.router.navigate(['/carregaredital/', id_edital]);
-  //   console.log(id_edital);
-  // }
-
   getEditalById(id: number): void {
-      this.router.navigate([`/carregaredital/${id}`]); 
+      this.router.navigate([`/home/carregaredital/${id}`]); 
   }
 }
 

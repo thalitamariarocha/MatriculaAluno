@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="cpf">CPF:</label>
+      <input type="text" formControlName="cpf" id="cpf" name="cpf" required>
+      <!-- <div *ngIf="loginForm && loginForm.get('cpf').invalid && (loginForm.get('cpf').dirty || loginForm.get('cpf').touched)">
+        <div *ngIf="loginForm.get('cpf').errors.required">CPF é obrigatório.</div>
+        <div *ngIf="loginForm.get('cpf').errors.pattern">CPF inválido.</div>
+      </div> -->
+
+      <label for="senha">Senha:</label>
+      <input type="password" formControlName="senha" id="senha" name="senha" required>
+      <!-- <div *ngIf="loginForm.get('senha').invalid && (loginForm.get('senha').dirty || loginForm.get('senha').touched)">
+        <div *ngIf="loginForm.get('senha').errors.required">Senha é obrigatória.</div>
+        <div *ngIf="loginForm.get('senha').errors.minlength">Senha deve ter pelo menos 6 caracteres.</div>
+      </div> -->
+
+      <button type="submit" >Entrar</button>
+    </form>
+  </div>
+</body>
+</html>
+

@@ -55,7 +55,7 @@ export class EditalComponent {
         this.message = 'Edital alterado com sucesso!';
         setTimeout(() => {
           this.message = '';
-          this.router.navigate(['/listarEdital']);
+          this.router.navigate(['/home/listarEdital']);
         }, 2000);
       });
     } else {
@@ -64,43 +64,11 @@ export class EditalComponent {
           this.message = 'Edital salvo com sucesso!';
           setTimeout(() => {
             this.message = '';
-            this.router.navigate(['/listarEdital']);
+            this.router.navigate(['/home/listarEdital']);
           }, 2000);
         }
       });
     }
   }
 
-    // onSubmit(): void {
-    //   if (!this.numero || !this.ano || !this.descricao || !this.qtdVagas) {
-    //     this.message = 'Todos os campos são obrigatórios.';
-    //     setTimeout(() => {
-    //       this.message = '';
-    //     }, 2000);
-    //     return;
-    //   }
-
-    //   const edital = {
-    //     numero: this.numero,
-    //     ano: this.ano,
-    //     descricao: this.descricao,
-    //     qtdVagas: this.qtdVagas
-    //   };
-
-    //   this.editalService.cadastarEdital(edital).subscribe((response: { id: any; }) => {
-    //     if (response.id) {
-    //       this.message = 'Edital salvo com sucesso!';
-    //       setTimeout(() => {
-    //         this.message = '';
-    //         this.router.navigate(['']);
-    //       }, 2000);
-    //       // Opcional: redirecionar para outra página
-
-
-    //     } else {
-    //       console.error('Erro ao salvar o edital:', console.error);
-    //       this.message = 'Erro: ' + console.error;
-    //     }
-    //   });
-    // }
   }

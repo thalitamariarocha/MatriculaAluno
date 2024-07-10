@@ -1,0 +1,66 @@
+h2 {
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+#novo {
+    justify-content: right;
+    margin: 20px; 
+    right: 10%;
+    position: absolute;
+    
+}
+
+
+
+
+.grid-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 1em;
+    margin-top: 80px;
+}
+
+.grid-header {
+    display: contents;
+    font-weight: bold;
+    
+}
+
+.grid-row {
+    display: contents;
+}
+
+.grid-cell {
+    padding: 10px 10px;
+    
+    text-align: left;
+}
+
+.grid-cell:nth-child(1),
+.grid-cell:nth-child(2),
+.grid-cell:nth-child(3) {
+    text-align: center;
+}
+
+.grid-cell:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grid-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+.grid-actions button span.material-symbols-outlined {
+    vertical-align: middle;
+}

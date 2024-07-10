@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router'; 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './componentes/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValidationComponent } from './componentes/validation/validation.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { NavbarComponent } from './componentes/itens/navbar/navbar.component';
 import { EditalComponent } from './Edital/componente/edital/edital.component';
 import { MainLayoutComponent } from './componentes/layout/main-layout/main-layout.component';
 import { HeaderComponent } from './componentes/layout/header/header.component';
 import { ListarEditalComponent } from './Edital/componente/listar-edital/listar-edital.component';
+import { LoginComponent } from './Login/componente/login/login.component';
+import { FormUsuarioComponent } from './Login/componente/form-usuario/form-usuario.component';
+import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,13 @@ import { ListarEditalComponent } from './Edital/componente/listar-edital/listar-
     FormsComponent,
     ValidationComponent,
     HomeComponent,
-    NavbarComponent,
     EditalComponent,
     MainLayoutComponent,
     HeaderComponent,
-    ListarEditalComponent
+    ListarEditalComponent,
+    LoginComponent,
+    FormUsuarioComponent,
+    ListarUsuarioComponent
 
   ],
   imports: [

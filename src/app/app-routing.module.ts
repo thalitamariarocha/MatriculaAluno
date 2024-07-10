@@ -1,47 +1,36 @@
-// import { NgModule } from '@angular/core';
-// import { RouterModule, Routes } from '@angular/router';
-// import { FormsComponent } from './componentes/forms/forms.component';
-// import { HomeComponent } from './componentes/home/home.component';
-// import { ValidationComponent } from './componentes/validation/validation.component';
-// import { EditalComponent } from './Edital/componente/edital/edital.component';
-// import { MainLayoutComponent } from './componentes/layout/main-layout/main-layout.component';
-
-
-// const routes: Routes = [
-
-//   { path: '', component: HomeComponent },
-//   { path: 'forms', component: FormsComponent },
-//   { path: 'validation', component: ValidationComponent },
-//   {path: 'edital', component: EditalComponent}
-// ];
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }
-
-
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './componentes/layout/main-layout/main-layout.component';
 import { EditalComponent } from './Edital/componente/edital/edital.component';
 import { ListarEditalComponent } from './Edital/componente/listar-edital/listar-edital.component';
+import { LoginComponent } from './Login/componente/login/login.component';
+import { FormUsuarioComponent } from './Login/componente/form-usuario/form-usuario.component';
+import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar-usuario.component';
+import { AuthGuard } from './Login/service/auth.guard';
 
 const routes: Routes = [
+  
+
+  // Adicione outras rotas aqui
+  {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}, // Redireciona rotas desconhecidas para a raiz
+
   {
-    path: '',
+    path: 'home',
     component: MainLayoutComponent,
     children: [
-       { path: 'edital', component: EditalComponent },
-       { path: 'carregaredital/:id', component: EditalComponent },
-       { path: 'listarEdital', component: ListarEditalComponent}
+       { path: 'edital', component: EditalComponent, canActivate: [AuthGuard] },
+       { path: 'carregaredital/:id', component: EditalComponent, canActivate: [AuthGuard] },
+       { path: 'listarEdital', component: ListarEditalComponent, canActivate: [AuthGuard]},
+       { path: 'usuario', component: FormUsuarioComponent, canActivate: [AuthGuard]},
+       { path: 'editarUsuario/:id_usuario', component: FormUsuarioComponent, canActivate: [AuthGuard]},
+       { path: 'listarUsuario', component: ListarUsuarioComponent, canActivate: [AuthGuard]}
      
       // Adicione outras rotas aqui
     ]
   },
-  { path: '**', redirectTo: '' } // Redireciona rotas desconhecidas para a raiz
+ 
+  
 ];
 
 @NgModule({

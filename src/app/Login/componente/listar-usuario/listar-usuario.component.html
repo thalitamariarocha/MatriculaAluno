@@ -1,0 +1,37 @@
+<head>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+
+<body>
+
+    <h2>Usuários</h2>
+    <div>
+        <button routerLink="/home/usuario" type="button" class="btn btn-success" id="novo">Novo Usuário</button>
+    </div>
+
+
+    <div class="grid-table">
+        <div class="grid-header">
+            <div class="grid-cell">#</div>
+            <div class="grid-cell">Nome</div>
+            <div class="grid-cell">perfil</div>
+            <div class="grid-cell">Ações</div>
+        </div>
+        <div class="grid-row" *ngFor="let usuario of usuarios ">
+            <div class="grid-cell">{{ usuario.id_usuario }}</div>
+            <div class="grid-cell">{{ usuario.nome }}</div>
+            <div class="grid-cell">{{ usuario.perfil }}</div>
+
+            <div class="grid-cell grid-actions">
+                <button class="btt" (click)="getUsuarioById(usuario.id_usuario)"><span class="material-symbols-outlined">
+                        edit </span></button>
+                <button class="btt" (click)="deletarUsuario(usuario.id_usuario)"><span class="material-symbols-outlined">
+                        delete </span></button>
+            </div>
+        </div>
+    </div>
+
+</body>
