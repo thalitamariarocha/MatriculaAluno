@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()"> 
+    <h2>Importar planilha de classificados</h2>
+    <h4>Iniciar processo de matrícula</h4>
+    <div>
+        <label for="edital">Selecione o Edital</label>
+
+        <select class="form-group">
+            <option *ngFor="let item of opcoes" [value]="item.id_edital">
+                <!-- {{ item.numero }} -->
+                {{ item.numero }}/{{ item.ano }}
+
+            </option>
+        </select>
+
+    </div>
+
+    <div class="form-group">
+        <label for="quantidade">Quantidade de Vagas</label>
+        <input type="number" id="quantidade" placeholder="quantidade">
+    </div>
+
+    <div class="form-group">
+        <label for="planilha">Planilha de Classificação</label>
+        <input type="file" id="planilha" placeholder="planilha">
+    </div>
+
+    <button type="submit" id="cadastrar">Salvar</button>
+
+</form>

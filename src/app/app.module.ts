@@ -15,6 +15,7 @@ import { ListarEditalComponent } from './Edital/componente/listar-edital/listar-
 import { LoginComponent } from './Login/componente/login/login.component';
 import { FormUsuarioComponent } from './Login/componente/form-usuario/form-usuario.component';
 import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar-usuario.component';
+import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-planilha.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar
     ListarEditalComponent,
     LoginComponent,
     FormUsuarioComponent,
-    ListarUsuarioComponent
+    ListarUsuarioComponent,
+    FormPlanilhaComponent
 
   ],
   imports: [

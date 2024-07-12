@@ -10,11 +10,10 @@
   }
   
   footer.fixar-rodape{
-    background-color: #7c838b60;
+    background-color: #7c838b60 ;
     bottom: 0;
     left: 0;
     height: 50px;
-    position: fixed;
     width: 100%;
     text-align: center;
     
