@@ -1,0 +1,29 @@
+form {
+    margin: auto;
+    width: 80%;
+    max-width: 400px;
+}
+
+label {
+    font-weight: bold;
+    
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastrar {
+    width: 100%;
+    background-color: rgb(197, 187, 187);
+}
+
+h2{
+    justify-content: center;
+    text-align: center;
+}
+
+

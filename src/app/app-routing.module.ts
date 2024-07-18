@@ -8,11 +8,13 @@ import { FormUsuarioComponent } from './Login/componente/form-usuario/form-usuar
 import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar-usuario.component';
 import { AuthGuard } from './Login/service/auth.guard';
 import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-planilha.component';
+import { FormAlunoComponent } from './Aluno/componente/form-aluno/form-aluno.component';
 
 const routes: Routes = [
   
 
   // Adicione outras rotas aqui
+  {path: 'carregaraluno/:id_aluno', component: FormAlunoComponent},
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}, // Redireciona rotas desconhecidas para a raiz
 

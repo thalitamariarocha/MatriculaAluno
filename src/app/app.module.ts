@@ -16,6 +16,7 @@ import { LoginComponent } from './Login/componente/login/login.component';
 import { FormUsuarioComponent } from './Login/componente/form-usuario/form-usuario.component';
 import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar-usuario.component';
 import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-planilha.component';
+import { FormAlunoComponent } from './Aluno/componente/form-aluno/form-aluno.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-
     LoginComponent,
     FormUsuarioComponent,
     ListarUsuarioComponent,
-    FormPlanilhaComponent
+    FormPlanilhaComponent,
+    FormAlunoComponent
 
   ],
   imports: [

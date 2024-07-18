@@ -12,8 +12,6 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  // cpf!: string;
-  // senha!: string;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
@@ -32,7 +30,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         error: (error) => {
-          debugger;
+          
           alert('Falha na autenticação, verifique suas credenciais.');
         }
       });

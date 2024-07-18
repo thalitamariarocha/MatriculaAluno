@@ -10,12 +10,16 @@ import { environment } from 'src/environments/environment';
 
 export class PlanilhaService {
     private apiUrl = 'http://localhost:3000/edital'; // URL do backend
-
+    private apiUrl2 = 'http://localhost:3000/aluno'; // URL do backend
 
     constructor(private http: HttpClient) { }
 
   opcoesEdital(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/opcoesedital`);
+  }
+
+  importarAlunos(formData: FormData): Observable<any> {
+    return this.http.post(`${this.apiUrl2}/importaralunos`, formData);
   }
 
  

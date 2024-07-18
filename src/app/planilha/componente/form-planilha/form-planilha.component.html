@@ -4,11 +4,10 @@
     <div>
         <label for="edital">Selecione o Edital</label>
 
-        <select class="form-group">
+        <select class="form-group" [(ngModel)]="selectedEdital" [ngModelOptions]="{standalone:true}" name="edital">
             <option *ngFor="let item of opcoes" [value]="item.id_edital">
                 <!-- {{ item.numero }} -->
                 {{ item.numero }}/{{ item.ano }}
-
             </option>
         </select>
 
@@ -16,12 +15,12 @@
 
     <div class="form-group">
         <label for="quantidade">Quantidade de Vagas</label>
-        <input type="number" id="quantidade" placeholder="quantidade">
+        <input type="number" id="quantidade" placeholder="quantidade" [(ngModel)]="quantidadeVagas" [ngModelOptions]="{standalone:true}">
     </div>
 
-    <div class="form-group">
-        <label for="planilha">Planilha de Classificação</label>
-        <input type="file" id="planilha" placeholder="planilha">
+    <div class="form-group" >
+        <label for="file">Planilha de Classificação</label>
+        <input type="file" id="file" placeholder="file" (change)="onFileChange($event)" required>
     </div>
 
     <button type="submit" id="cadastrar">Salvar</button>

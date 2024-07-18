@@ -1,0 +1,40 @@
+<h2>FORMULÁRIO DE MATRICULA</h2>
+<form (ngSubmit)="onSubmit()" #cadastroForm="ngForm">
+    <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text"  [(ngModel)]="nome" id="nome" [ngModelOptions]="{standalone: true}" placeholder="Nome Completo">
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email"  [(ngModel)]="email" [ngModelOptions]="{standalone: true}" id="email" placeholder="E-mail">
+    </div>
+
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="cpf"  [(ngModel)]="cpf" [ngModelOptions]="{standalone: true}" id="cpf" placeholder="somente números">
+    </div>
+
+    <div class="form-group">
+        <label for="rg">RG</label>
+        <input type="rg"  [(ngModel)]="rg" [ngModelOptions]="{standalone: true}"  id="rg" placeholder="somente números">
+    </div>
+
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="tel"  [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" id="telefone" placeholder="Telefone">
+    </div>
+
+    <div class="form-group">
+        <label for="endereco">Endereço Completo </label>
+        <input type="endereco" [(ngModel)]="endereco" [ngModelOptions]="{standalone: true}" id="endereco" placeholder="endereco">
+    </div>
+
+    <div class="form-group">
+        <label for="documentos">Documentos digitalizados</label>
+        <input type="file" id="documentos" (change)="onFileChange($event)" placeholder="documentos">
+    </div>
+
+    <button type="submit" id="cadastrar" [disabled]="!cadastroForm.form.valid">Salvar</button>
+  
+</form>
