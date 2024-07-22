@@ -1,0 +1,11 @@
+<h5> Enviando e-mails para a lista de aprovados abaixo, não saia dessa tela!</h5>
+
+
+<div class="grid-table">
+    <div class="grid-header">
+        <div class="grid-cell">E-mail</div>
+    </div>
+    <div class="grid-row" *ngFor="let aluno of alunos ">
+        <div class="grid-cell">{{ aluno.email }}</div>
+    </div>
+</div>

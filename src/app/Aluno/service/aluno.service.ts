@@ -15,24 +15,16 @@ export class AlunoService {
 
   constructor(private http: HttpClient) { }
 
-  // atualizarAluno(aluno: {
-  //   id_aluno: number;
-  //   nome: string;
-  //   email: string;
-  //   cpf: string;
-  //   dt_Nascimento: string;
-  //   telefone: string;
-  //   rg: string;
-  //   endereco: string;
-  // }, id_aluno: number): Observable<any> {
-  //   return this.http.put<Aluno>(`${this.apiUrl}/atualizaraluno/${id_aluno}`, aluno);
-  // }
-
   atualizarAluno(formData: FormData): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/atualizaraluno`, formData);
   }
+
   getAlunoById(id_aluno: number): Observable<Aluno> {
     return this.http.get<Aluno>(`${this.apiUrl}/carregaraluno/${id_aluno}`);
+  }
+
+  validarCpf(cpf: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/validarCpf/${cpf}`, cpf);
   }
 
 

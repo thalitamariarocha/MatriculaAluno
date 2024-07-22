@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ValidationComponent } from './validation.component';
+import { EnviarEmailComponent } from './enviar-email.component';
 
-describe('ValidationComponent', () => {
-  let component: ValidationComponent;
-  let fixture: ComponentFixture<ValidationComponent>;
+describe('EnviarEmailComponent', () => {
+  let component: EnviarEmailComponent;
+  let fixture: ComponentFixture<EnviarEmailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ValidationComponent ]
+      declarations: [ EnviarEmailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ValidationComponent);
+    fixture = TestBed.createComponent(EnviarEmailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,6 +9,10 @@ import { ListarUsuarioComponent } from './Login/componente/listar-usuario/listar
 import { AuthGuard } from './Login/service/auth.guard';
 import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-planilha.component';
 import { FormAlunoComponent } from './Aluno/componente/form-aluno/form-aluno.component';
+//import { EnvioEmailComponent } from './planilha/componente/envio-email/envio-email.component';
+import { EnviarEmailComponent } from './planilha/componente/enviar-email/enviar-email.component';
+import { AcessoAlunoComponent } from './Aluno/componente/acesso-aluno/acesso-aluno.component';
+
 
 const routes: Routes = [
   
@@ -16,6 +20,7 @@ const routes: Routes = [
   // Adicione outras rotas aqui
   {path: 'carregaraluno/:id_aluno', component: FormAlunoComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'acessoAluno', component: AcessoAlunoComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}, // Redireciona rotas desconhecidas para a raiz
 
   {
@@ -28,9 +33,11 @@ const routes: Routes = [
        { path: 'usuario', component: FormUsuarioComponent, canActivate: [AuthGuard]},
        { path: 'editarUsuario/:id_usuario', component: FormUsuarioComponent, canActivate: [AuthGuard]},
        { path: 'listarUsuario', component: ListarUsuarioComponent, canActivate: [AuthGuard]},
-       { path: 'importPlanilha', component: FormPlanilhaComponent, canActivate: [AuthGuard]}
+       { path: 'importPlanilha', component: FormPlanilhaComponent, canActivate: [AuthGuard]},
+       { path: 'enviaremail/:id_edital', component: EnviarEmailComponent, canActivate: [AuthGuard]}
+
      
-      // Adicione outras rotas aqui
+
     ]
   },
  

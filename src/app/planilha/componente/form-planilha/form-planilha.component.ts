@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PlanilhaService } from '../../service/planilha.service';
 import { Edital } from 'src/app/Edital/model/edital.model';
 import { HttpClient } from '@angular/common/http';
+import { SharedService } from 'src/app/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-planilha',
@@ -17,7 +19,7 @@ export class FormPlanilhaComponent implements OnInit {
   item!: Edital;
   opcoes: Edital[] = [];
 
-  constructor(private planilhaService: PlanilhaService, private http: HttpClient) { }
+  constructor(private planilhaService: PlanilhaService, private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.planilhaService.opcoesEdital().subscribe((data) => {
@@ -47,12 +49,6 @@ export class FormPlanilhaComponent implements OnInit {
     formData.append('edital', this.selectedEdital);
     formData.append('vagas', this.quantidadeVagas.toString());
 
-    // let body = {
-    //   file: this.file,
-    //   edital: this.selectedEdital,
-    //   vagas: this.quantidadeVagas.toString()
-    // }
-
 
     setTimeout(() => {
 
@@ -60,6 +56,7 @@ export class FormPlanilhaComponent implements OnInit {
         (response) => {
           console.log(response);
           alert('Planilha cadastrada com sucesso');
+          this.router.navigate(['home/enviaremail', this.selectedEdital]);
         },
         (error) => {
           console.log(error);
@@ -70,6 +67,8 @@ export class FormPlanilhaComponent implements OnInit {
     }, 4000);
 
   }
+
+ 
 
 
 }

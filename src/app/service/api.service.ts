@@ -13,11 +13,6 @@ export class ApiService {
   getHelloMessage(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/hello`);
   }
-
-  validarCpf(cpf: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/validar-cpf`, { cpf });
-  }
-
  
 
 }
