@@ -47,6 +47,11 @@ export class FormAlunoComponent {
   }
 
   onSubmit(): void {
+    if(this.nome === '' || this.email === '' || this.cpf === '' || this.dt_Nascimento === '' || this.telefone === '' || this.rg === '' || this.endereco === '') {
+      alert('Preencha todos os campos');
+      return;
+    }
+    
     if (this.file) {
       const formData = new FormData();
       formData.append('comprovante', this.file);
@@ -62,7 +67,8 @@ export class FormAlunoComponent {
       this.alunoService.atualizarAluno(formData).subscribe(
         (response) => {
           console.log(response);
-          alert('Aluno atualizado com sucesso');
+          alert('Aluno atualizado com sucesso, feche a janela e aguarde a aprovação');
+          this.router.navigate(['/acessoAluno']);
         },
         (error) => {
           console.log(error);

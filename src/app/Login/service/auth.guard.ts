@@ -8,23 +8,15 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanActivate {
     constructor(private authService: AuthService, private router: Router) { }
 
-    //   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    //     if (this.authService.isAuthenticated()) {
-    //       return true;
-    //     } else {
-    //       this.router.navigate(['/login']);
-    //       return false;
-    //     }
-    //   }
-
     canActivate(): boolean {
-     
-        if (this.authService.isAuthenticated()) {
-            return true;
-        } else {
-            this.router.navigate(['/login']);
+            const role = localStorage.getItem('tipo');
+            if (this.authService.isAuthenticated() && role === 'Administrador') {
+              return true;
+            }
+            alert('Acesso negado, você não é um Administrador');
+            //this.router.navigate(['/login']);
             return false;
-        }
+          
     }
 
 }

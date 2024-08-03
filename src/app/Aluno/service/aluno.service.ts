@@ -16,6 +16,7 @@ export class AlunoService {
   constructor(private http: HttpClient) { }
 
   atualizarAluno(formData: FormData): Observable<any> {
+ 
     return this.http.post<any>(`${this.apiUrl}/atualizaraluno`, formData);
   }
 

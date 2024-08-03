@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './componentes/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './componentes/home/home.component';
 import { EditalComponent } from './Edital/componente/edital/edital.component';
 import { MainLayoutComponent } from './componentes/layout/main-layout/main-layout.component';
 import { HeaderComponent } from './componentes/layout/header/header.component';
@@ -18,12 +17,13 @@ import { FormPlanilhaComponent } from './planilha/componente/form-planilha/form-
 import { FormAlunoComponent } from './Aluno/componente/form-aluno/form-aluno.component';
 import { EnviarEmailComponent } from './planilha/componente/enviar-email/enviar-email.component';
 import { AcessoAlunoComponent } from './Aluno/componente/acesso-aluno/acesso-aluno.component';
+import { AvaliarMatriculaComponent } from './Avaliador/componente/avaliar-matricula/avaliar-matricula.component';
+import { ListaMatriculaComponent } from './Avaliador/componente/lista-matricula/lista-matricula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
-    HomeComponent,
     EditalComponent,
     MainLayoutComponent,
     HeaderComponent,
@@ -34,8 +34,9 @@ import { AcessoAlunoComponent } from './Aluno/componente/acesso-aluno/acesso-alu
     FormPlanilhaComponent,
     FormAlunoComponent,
     EnviarEmailComponent,
-    AcessoAlunoComponent
-
+    AcessoAlunoComponent,
+    AvaliarMatriculaComponent,
+    ListaMatriculaComponent
   ],
   imports: [
     BrowserModule,

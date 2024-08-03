@@ -12,15 +12,11 @@ export class AcessoAlunoComponent  {
   cpf!: number ;
   message: string = ''; 
 
-
   constructor(private alunoService: AlunoService, private router: Router) { }
 
   ngOnInit(): void {
-
-
   
   }
-
 
   OnSubmit(): void {
     this.alunoService.validarCpf(this.cpf).subscribe(response => {
@@ -29,7 +25,7 @@ export class AcessoAlunoComponent  {
         
         //this.router.navigate(['/carregaraluno', this.cpf]);
       } else if (response.message === 'Erro ao buscar alunos') {
-        this.message = 'Erro ao buscar alunos';
+        this.message = 'Erro ao buscar CPF';
       }
       
       else {

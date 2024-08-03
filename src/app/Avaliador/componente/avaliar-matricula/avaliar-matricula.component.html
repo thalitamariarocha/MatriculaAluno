@@ -1,0 +1,40 @@
+<form #cadastroForm="ngForm">
+  <div class="form-group">
+      <label for="nome">Nome Completo</label>
+      <input type="text"  [(ngModel)]="nome" id="nome" [ngModelOptions]="{standalone: true}" placeholder="Nome Completo" disabled>
+  </div>
+
+  <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email"  [(ngModel)]="email" [ngModelOptions]="{standalone: true}" id="email" placeholder="E-mail" disabled>
+  </div>
+
+  <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input type="cpf"  [(ngModel)]="cpf" [ngModelOptions]="{standalone: true}" id="cpf" placeholder="somente números" disabled>
+  </div>
+
+  <div class="form-group">
+      <label for="rg">RG</label>
+      <input type="rg"  [(ngModel)]="rg" [ngModelOptions]="{standalone: true}"  id="rg" placeholder="somente números" disabled>
+  </div>
+
+  <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="tel"  [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" id="telefone" placeholder="Telefone" disabled>
+  </div>
+
+  <div class="form-group">
+      <label for="endereco">Endereço Completo </label>
+      <input type="endereco" [(ngModel)]="endereco" [ngModelOptions]="{standalone: true}" id="endereco" placeholder="endereco" disabled>
+  </div>
+
+  <div *ngIf="documentoUrl">
+    <iframe [src]="documentoUrl" width="100%" height="500px"></iframe>
+  </div>
+  <div class="form-group">
+    <button type="button" (click)="aprovarAluno(id_aluno)" class="btn btn-success">Aprovar</button>
+    <button type="button" (click)="reprovarAluno(id_aluno)" class="btn btn-danger">Reprovar</button>
+  </div>
+
+</form>

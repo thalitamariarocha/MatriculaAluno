@@ -1,4 +1,5 @@
 export interface Aluno {
+    documento: File;
     id_aluno: number;
     nome: string;
     email: string;
