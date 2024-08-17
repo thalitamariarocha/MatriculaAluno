@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsComponent } from './componentes/forms/forms.component';
+// import { FormsComponent } from './componentes/forms/forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditalComponent } from './Edital/componente/edital/edital.component';
 import { MainLayoutComponent } from './componentes/layout/main-layout/main-layout.component';
@@ -23,7 +23,7 @@ import { ListaMatriculaComponent } from './Avaliador/componente/lista-matricula/
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent,
+    //1FormsComponent,
     EditalComponent,
     MainLayoutComponent,
     HeaderComponent,

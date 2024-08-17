@@ -4,10 +4,9 @@
     padding: 20px;
   }
 
-  div.body-content{
-    /** Essa margem vai evitar que o conteudo fique por baixo do rodapé **/
+  /* div.body-content{
     margin-bottom: 40px;
-  }
+  } */
   
   footer.fixar-rodape{
     background-color: #7c838b60 ;

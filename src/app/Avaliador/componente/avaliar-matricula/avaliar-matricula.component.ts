@@ -28,6 +28,8 @@ export class AvaliarMatriculaComponent implements OnInit {
     " entre no link http://localhost:4200/acessoAluno verifique se todos os documentos foram enviados corretamente e se " +
     "foi preenchido conforme documentação. " + " Caso tenha dúvidas, entre em contato conosco.";
 
+  mensagemAprovacao = "Parabéns! sua documentação foi avaliada e informamos que sua matrícula já está finalizada no IFMT.";
+
   alunos: any[] = [];
   aluno!: any;
 
@@ -59,7 +61,17 @@ export class AvaliarMatriculaComponent implements OnInit {
   aprovarAluno(id_aluno: number): void {
     this.matriculaService.aprovarAluno(this.id_aluno).subscribe(() => {
       alert('Aluno aprovado com sucesso!');
-      this.router.navigate(['/home/listarMatricula']);
+      this.planilhaService.sendEmail(this.email, 'Matrícula Aprovada - IFMT', this.mensagemAprovacao).subscribe({
+        next: () => {
+          alert('E-mail enviado com sucesso!');
+          this.router.navigate(['/home/listarMatricula']);
+        },
+        error: (err) => {
+          alert("Erro ao enviar e-mail para " + this.email + ':' + err);
+        }
+      });
+      
+      //this.router.navigate(['/home/listarMatricula']);
     }
     );
   }
@@ -81,31 +93,6 @@ export class AvaliarMatriculaComponent implements OnInit {
     );
   }
 
-  // emailReprovacao(): void {
-  //   this.planilhaService.sendEmail(this.email, 'Reprovação de Matrícula', this.mensagem).subscribe({
-  //     next: () => {
-  //       alert('E-mail enviado com sucesso!');
-  //       this.router.navigate(['/home/listarMatricula']);
-  //     },
-  //     error: (err) => {
-  //       alert("Erro ao enviar e-mail para " + this.email + ':' + err);
-  //     }
-  //   });
-  // }
-
-  // emailReprovacao(): void {
-   
-  //   this.planilhaService.sendEmail(this.email, 'Reprovação de Matrícula', this.mensagem).subscribe(() => {
-  //     if (error) {
-  //       alert("Erro ao enviar e-mail para " + this.email + ':' + error);
-  //     }
-  //     else {
-  //       alert('E-mail enviado com sucesso!');
-  //       this.router.navigate(['/home/listarMatricula']);
-  //     }
-  //   }
-  //   );
-  // }
 
 
 }
