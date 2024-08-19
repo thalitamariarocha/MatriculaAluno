@@ -33,6 +33,8 @@
     <div class="form-group">
         <label for="documentos">Documentos digitalizados</label>
         <input type="file" id="documentos" (change)="onFileChange($event)" placeholder="documentos">
+        <p>enviar em arquivo único pdf: Certidão de nascimento, Comprovante de residência, Histórico escolar, Foto 3x4, Cédula de identidade com CPF
+            </p>
     </div>
 
     <button type="submit" id="cadastrar" [disabled]="!cadastroForm.form.valid">Salvar</button>
